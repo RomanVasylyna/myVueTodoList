@@ -11,12 +11,12 @@
 import TodoItem from './TodoItem.vue';
 
 export default {
-name : 'Todos', 
+name : 'Todos',
 
 props: ['todos'],
 
 components: {
-TodoItem    
+TodoItem
 }
 
 }
