@@ -68,6 +68,7 @@ export default {
 
 <style>
 
+/* General Styling For All Elements */
 *{
 box-sizing: border-box;
 margin: 0;
@@ -82,7 +83,7 @@ font-family: sans-serif;
 .allTodos{
 background: white;
 width: 50%;
-padding: 18px;
+padding: 20px;
 margin: 50px auto;
 border-radius: 20px;
 }
@@ -90,6 +91,68 @@ border-radius: 20px;
 .allTodos h1{
 text-align: center;
 margin-bottom: 5px;
+font-size: 2rem;
+} 
+
+
+/* Phones */
+@media (max-width: 690px) {
+
+.allTodos{
+background: white;
+width: 60%;
+padding: 7px;
+margin: 50px auto;
+border-radius: 20px;
 }
+
+.allTodos h1{
+text-align: center;
+margin-bottom: 5px;
+font-size: 1.5rem;
+}
+
+}
+
+/* Ipad and other tablets*/
+@media only screen and (max-width: 800px) and (min-width: 700px) {
+
+.allTodos{
+background: white;
+width: 70%;
+padding: 7px;
+margin: 50px auto;
+border-radius: 20px;
+}
+
+.allTodos h1{
+text-align: center;
+margin-bottom: 5px;
+font-size: 1.5rem;
+}
+
+} 
+
+/* Ipad Pro */
+@media only screen and (max-width: 1100px) and (min-width: 1000px) {
+
+.allTodos{
+background: white;
+width: 70%;
+padding: 9px;
+margin: 50px auto;
+border-radius: 20px;
+}
+
+.allTodos h1{
+text-align: center;
+margin-bottom: 5px;
+font-size: 2rem;
+}   
+
+}
+
+
+
 
 </style>

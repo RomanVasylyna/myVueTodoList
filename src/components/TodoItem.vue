@@ -38,17 +38,6 @@ this.todo.completed = !this.todo.completed;
 
 <style scoped>
 
-.del-btn{
-background: #fff;
-border: 1.2px solid red;
-color: red;
-padding: 1.5px 8px;
-border-radius: 20px;
-cursor: pointer;
-float:right;
-font-weight: bold;
-font-size: 0.9rem;
-}
 
 .del-btn:hover{
 background: red;
@@ -61,7 +50,38 @@ text-decoration: line-through;
 color: green;
 }
 
+/* Phones */
+@media (max-width: 690px) {
+
 .todo{
+display:flex;
+flex-direction: column;  
+align-items: center;
+background:#fff;
+border-radius: 5px;
+border: 1px solid gray;
+padding: 12px;
+margin: 12px;
+word-wrap: break-word;
+}
+
+.del-btn{
+background: #fff;
+border: 1.2px solid red;
+color: red;
+padding: 1.5px 7px;
+border-radius: 20px;
+cursor: pointer;
+float:right;
+font-weight: bold;
+font-size: 0.9rem;
+}
+
+}
+
+/* Regular Desktops */
+
+.todo {
 background:#fff;
 border-radius: 5px;
 border: 1px solid gray;
@@ -69,6 +89,17 @@ padding: 12px;
 margin: 12px;
 }
 
+.del-btn{
+background: #fff;
+border: 1.2px solid red;
+color: red;
+padding: 1.5px 8px;
+border-radius: 20px;
+cursor: pointer;
+float:right;
+font-weight: bold;
+font-size: 0.9rem;
+}
 
 
 </style>
