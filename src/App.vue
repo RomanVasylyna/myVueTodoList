@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-   <!-- <Header /> -->
+
+   <!-- All Todos Container -->
   <div class="allTodos">
     <h1>To-Do List</h1>
     <AddTodo :todos="todos" @addTodo="addTodo"/>
    <Todos :todos="todos" @removeItem="removeItem"/>
    </div>
+
   </div>
 </template>
 
 
 <script>
 // Import Elements
-// import Header from './styling/Header.vue';
 import AddTodo from './components/AddTodo.vue';
 import Todos from './components/Todos.vue';
 
@@ -22,33 +23,12 @@ export default {
   data() {
   return {
 
-  todos: [
-
-  {
-   id: '1',
-   title: 'Todo One',
-   completed: false,
-  },
-
-  {
-   id: '2',
-   title: 'Todo Two',
-   completed: true,
-  },
-
-  {
-   id: '3',
-   title: 'Todo Three',
-   completed: false,
-  },
-
-  ],
+  todos: [],
 
   }
   },
 
   components: {
-  // Header,
   AddTodo,
   Todos,
   },
@@ -62,6 +42,16 @@ export default {
   this.todos = [...this.todos, newTodo];
   }
   },
+
+  created() {
+  fetch('https://jsonplaceholder.typicode.com/todos')
+  .then(res => res.json())
+  .then(resJson => {
+  resJson.length = 3;
+  this.todos = resJson;
+  })
+  .catch(err => console.log(err));
+  }
 
 }
 </script>
@@ -92,7 +82,7 @@ border-radius: 20px;
 text-align: center;
 margin-bottom: 5px;
 font-size: 2rem;
-} 
+}
 
 
 /* Phones */
@@ -131,7 +121,7 @@ margin-bottom: 5px;
 font-size: 1.5rem;
 }
 
-} 
+}
 
 /* Ipad Pro */
 @media only screen and (max-width: 1100px) and (min-width: 1000px) {
@@ -148,7 +138,7 @@ border-radius: 20px;
 text-align: center;
 margin-bottom: 5px;
 font-size: 2rem;
-}   
+}
 
 }
 

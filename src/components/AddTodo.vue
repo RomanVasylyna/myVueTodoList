@@ -9,8 +9,6 @@
 </template>
 
 <script>
-// Importing Tool to Generate Ids
-import { v4 as uuidv4 } from 'uuid';
 
 export default {
 name: 'AddTodo',
@@ -34,13 +32,13 @@ e.preventDefault();
 if(this.title != '') {
 
 // if(this.title.length > 10) {
-// this.title = this.title.slice(0, 10) + '...';   
+// this.title = this.title.slice(0, 10) + '...';
 // }
 
 
 // Add New Todo
 let newTodo = {
-id: uuidv4(),
+id: this.todos.length + 1,
 title: this.title,
 completed: false
 };
@@ -49,11 +47,11 @@ completed: false
 this.title='';
 
 // Push new Todo to Array with Todos
-this.$emit('addTodo', newTodo); 
+this.$emit('addTodo', newTodo);
 
 } else {
-  alert('Todo Can\'t be empty!');  
-}  
+  alert('Todo Can\'t be empty!');
+}
 
 }
 },
@@ -74,7 +72,7 @@ height: 6vh;
 padding: 12px;
 border-radius: 5px;
 margin-bottom: 7px;
-} 
+}
 
 
 /* Phones */
@@ -88,7 +86,7 @@ border-radius: 5px;
 margin-bottom: 7px;
 }
 
-}   
+}
 
 /* Ipad and other tablets*/
 @media only screen and (max-width: 800px) and (min-width: 700px) {
@@ -99,9 +97,9 @@ height: 4vh;
 padding: 12px;
 border-radius: 5px;
 margin-bottom: 10px;
-}   
+}
 
-}   
+}
 
 /* Ipad Pro */
 @media only screen and (max-width: 1100px) and (min-width: 1000px) {
@@ -112,7 +110,7 @@ height: 4vh;
 padding: 12px;
 border-radius: 5px;
 margin-bottom: 10px;
-}   
+}
 
 }
 
