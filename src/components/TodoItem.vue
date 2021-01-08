@@ -39,6 +39,7 @@ this.todo.completed = !this.todo.completed;
 <style scoped>
 
 
+
 .del-btn:hover{
 background: red;
 color: #fff;
@@ -55,7 +56,7 @@ color: green;
 
 .todo{
 display:flex;
-flex-direction: column;  
+flex-direction: column;
 align-items: center;
 background:#fff;
 border-radius: 5px;
